@@ -36,17 +36,11 @@ public class Calendario {
         return false;
     }
 
-    private boolean checkMes() {
-        return mes > 0 && mes <= 12;
-    }
+    private boolean checkMes() { return mes > 0 && mes <= 12; }
 
-    private boolean checkAno() {
-        return ano > 0;
-    }
+    private boolean checkAno() { return ano > 0; }
 
-    private boolean checkBisexto() {
-        return (ano%400 == 0) || (ano % 4 == 0 && ano % 100 != 0);
-    }
+    private boolean checkBisexto() { return (ano%400 == 0) || (ano % 4 == 0 && ano % 100 != 0); }
 
     public Calendario() {
         dia = mes = ano = 1;

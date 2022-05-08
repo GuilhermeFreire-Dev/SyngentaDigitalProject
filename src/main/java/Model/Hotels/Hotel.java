@@ -39,7 +39,5 @@ public class Hotel {
         return custo;
     }
 
-    public int getClassificacao() {
-        return classificacao;
-    }
+    public int getClassificacao() { return classificacao; }
 }

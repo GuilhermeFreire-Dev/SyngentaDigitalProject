@@ -5,15 +5,13 @@ import Model.Hotels.Bridgewood;
 import Model.Hotels.Hotel;
 import Model.Hotels.Lakewood;
 import Model.Hotels.Ridgewood;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Reserva {
-    private Hotel lake;
-    private Hotel bride;
-    private Hotel ridge;
+    private final Hotel lake;
+    private final Hotel bride;
+    private final Hotel ridge;
 
     public Reserva() {
         lake = new Lakewood();
@@ -21,7 +19,7 @@ public class Reserva {
         ridge = new Ridgewood();
     }
 
-    public void orderReserva(List<Integer> day1, List<Integer> day2, List<Integer> day3, String cliente) {
+    public String orderReserva(List<Integer> day1, List<Integer> day2, List<Integer> day3, String cliente) {
 
         List<Integer> diasDeReserva = new ArrayList<>();
 
@@ -36,13 +34,18 @@ public class Reserva {
         calendario.setData(day3.get(0), day3.get(1), day3.get(2));
         diasDeReserva.add(calendario.diaDaSemana());
 
-        Double custoLake = lake.custoTotal(diasDeReserva, cliente);
-        Double custoBridge = bride.custoTotal(diasDeReserva, cliente);
-        Double custoRidge = ridge.custoTotal(diasDeReserva, cliente);
+        double custoLake = lake.custoTotal(diasDeReserva, cliente);
+        double custoBridge = bride.custoTotal(diasDeReserva, cliente);
+        double custoRidge = ridge.custoTotal(diasDeReserva, cliente);
 
         //Verificar hotel mais barato
+        Double min = Double.min(custoLake, custoBridge);
+        min = Double.min(min, custoRidge);
 
-
+        if (min.equals(custoRidge))
+            return "Ridgewood";
+        if (min.equals(custoBridge))
+            return "Bridgewood";
+        return "Lakewood";
     }
-
 }
