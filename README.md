@@ -1,4 +1,4 @@
-# SyngentaDigitalProjetc
+# SyngentaDigitalProject
 Author: Guilherme Freire\
 Programming language: Java
 #
