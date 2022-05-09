@@ -12,7 +12,7 @@ public class Format {
 
         switch (m) {
             case "Jan" -> mes = 1;
-            case "Fev" -> mes = 2;
+            case "Feb" -> mes = 2;
             case "Mar" -> mes = 3;
             case "Apr" -> mes = 4;
             case "May" -> mes = 5;
@@ -23,7 +23,7 @@ public class Format {
             case "Oct" -> mes = 10;
             case "Nov" -> mes = 11;
             case "Dec" -> mes = 12;
-            default -> mes = 1;
+            default -> mes = 0;
         }
 
         return Arrays.asList(Integer.parseInt(d), mes, Integer.parseInt(a));
