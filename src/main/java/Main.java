@@ -10,7 +10,7 @@ public class Main {
         Reserva reserva = new Reserva();
         List<String> entradas = Arrays.asList(  "Regular:16Mar2009,17Mar2009,18Mar2009",
                                                 "Regular:20Mar2009,21Mar2009,22Mar2009",
-                                                "Rewards:26Mar2009,27Mar2009,08Mar2009");
+                                                "Rewards:26Mar2009,27Mar2009,28Mar2009");
         String client;
         String text;
 
